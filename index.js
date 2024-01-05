@@ -1,26 +1,25 @@
-import dotenv from 'dotenv';
+import date from 'date-and-time';
 import opportunities from "./utils/opportunities/index.js";
 import writeCSV from './utils/csv/index.js';
 import refresh from './utils/auth/authToken.js';
-import fetch from 'node-fetch';
 import uploadFile from './utils/egnyte/index.js';
 
-dotenv.config();
-
-const filePath = './Contacts_To_Opp.csv'
-
 async function main() {
+  const file = filePath();
   // const authToken = await refresh();
 
   // const opps = await opportunities(authToken);
-  // writeCSV(opps, filePath);
+  // writeCSV(opps, file);
 
-  await uploadFile(filePath);
+  console.log(file);
+
+  // await uploadFile(file);
 
 }
 
-
-
-
+const filePath = () => {
+  const dateFormatted = date.format(new Date(), "MM-DD-YYYY");
+  return `${dateFormatted}-Opportunity_Contacts.csv`
+}
 
 main();
