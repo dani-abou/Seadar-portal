@@ -90,7 +90,7 @@ export default async function getOpportunities(auth) {
       headers: { "Authorization": `Zoho-oauthtoken ${auth}` },
     })
     const json = await res.json();
-    console.log(json);
+    // console.log(json);
     moreRecords = json.info.more_records;
     page++;
     allOpps = allOpps.concat(json.data)

@@ -10,12 +10,14 @@ export default function writeCSV(opps, filePath) {
 
   //YEAR-MM-DD-Opportunity-roles
 
-  fs.writeFile(filePath, fullString, function (err) {
-    if (err) {
-      console.log('Some error occured - file either not saved or corrupted file saved.');
-    } else {
-      console.log('It\'s saved!');
-    }
-  });
+  // fs.writeFile(filePath, fullString, function (err) {
+  //   if (err) {
+  //     console.log('Some error occured - file either not saved or corrupted file saved.');
+  //   } else {
+  //     console.log('It\'s saved!');
+  //   }
+  // });
+
+  return fullString;
 }
 

@@ -5,14 +5,14 @@ import refresh from './utils/auth/authToken.js';
 import uploadFile from './utils/egnyte/index.js';
 
 async function main() {
-  const file = filePath();
+  const fileName = filePath();
   const authToken = await refresh();
 
   const opps = await opportunities(authToken);
-  writeCSV(opps, file);
+  const fileContents = writeCSV(opps);
 
 
-  // await uploadFile(file);
+  await uploadFile(fileName, fileContents);
 
 }
 
