@@ -7,13 +7,9 @@ import uploadFile from './utils/egnyte/index.js';
 async function main() {
   const fileName = filePath();
   const authToken = await refresh();
-
   const opps = await opportunities(authToken);
   const fileContents = writeCSV(opps);
-
-
   await uploadFile(fileName, fileContents);
-
 }
 
 const filePath = () => {

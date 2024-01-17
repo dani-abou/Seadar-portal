@@ -46,6 +46,8 @@ const ROLE_BANK = {
   "Developer": "RE Broker",
   "Architect - Landscape": "Landscape Architect",
   "Client - Residential": "Property Owner",
+  "Client - Institutional/Commercial": "Property Owner",
+
 }
 
 function format(json) {

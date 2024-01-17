@@ -11,7 +11,6 @@ const body = {
 }
 const formattedBody = new URLSearchParams(body).toString();
 
-//https://<Egnyte Domain>.egnyte.com/puboauth/token?client_id=<API Key>&redirect_uri=<Callback URL>&scope=<SELECTED SCOPES>&state=<STRING>&response_type=token
 
 export default async function egnyteAuth() {
   const res = await fetch("https://seadar.egnyte.com/puboauth/token?", {
@@ -22,8 +21,7 @@ export default async function egnyteAuth() {
     },
     body: formattedBody
   })
-  // console.log(res);
   const json = await res.json();
 
-  console.log(json);
+  return json.access_token;
 }
